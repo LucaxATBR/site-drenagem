@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simulação Hidráulica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Simulação Hidráulica de Tubulações</h1>
+
+  <div class="input-container">
+    <label for="diametro">Diâmetros (mm, separados por vírgula):</label>
+    <input type="text" id="diametro" value="500, 600, 800, 1000, 1200, 1500">
+
+    <label for="declividade">Declividade Inicial (m/m):</label>
+    <input type="number" id="declividadeInicial" value="0.005" step="0.001">
+
+    <label for="declividade">Declividade Final (m/m):</label>
+    <input type="number" id="declividadeFinal" value="0.1" step="0.001">
+
+    <label for="rugosidade">Coeficiente de Rugosidade (n):</label>
+    <input type="number" id="rugosidade" value="0.015" step="0.001">
+
+    <button onclick="calcular()">Calcular</button>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="grafico"></canvas>
+  </div>
+
+  <div id="tabela-resultados">
+    <h2>Resultados dos Cálculos</h2>
+    <table></table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

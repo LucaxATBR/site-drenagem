@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cálculo Hidráulico de Tubulações</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>Cálculo Hidráulico de Tubulações Circulares</h1>
+
+    <div class="input-container">
+        <label for="diametro">Diâmetro da tubulação (m):</label>
+        <input type="number" id="diametro" value="0.6" step="0.01">
+
+        <label for="declividade">Declividade (m/m):</label>
+        <input type="number" id="declividade" value="0.01" step="0.001">
+
+        <label for="rugosidade">Coeficiente de rugosidade (n):</label>
+        <input type="number" id="rugosidade" value="0.015" step="0.001">
+
+        <label for="yInicial">Altura inicial da lâmina d'água (m):</label>
+        <input type="number" id="yInicial" value="0.3" step="0.01">
+
+        <label for="yFinal">Altura final da lâmina d'água (m):</label>
+        <input type="number" id="yFinal" value="0.6" step="0.01">
+
+        <button onclick="calcular()">Calcular</button>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="grafico"></canvas>
+    </div>
+
+    <div id="tabela-resultados">
+        <h2>Resultados dos Cálculos</h2>
+        <table></table>
+        <button id="export-btn">Exportar para Excel</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>  
+
+    <script src="app.js"></script>
+</body>
+
+</html>
